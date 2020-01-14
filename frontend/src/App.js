@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import { Button } from 'reactstrap';
-import Login from './pages/Login';
+import Routes from './routes';
 
 function App() {
   return (
     <div>
-      <Login />
-      <Button color="primary">primary</Button>
+      <Routes/>
     </div>
   );
 }
