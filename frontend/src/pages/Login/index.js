@@ -10,7 +10,7 @@ export default class Login extends React.Component {
             titulo: 'Login Teste State'
         }
 
-        this.handleClick = this.handleClick(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     componentDidMount() {
@@ -18,9 +18,11 @@ export default class Login extends React.Component {
     }
 
     async handleClick() {
-        let response = await api.post('/autenticar', {
-            username: ''
+        console.log('login')
+        let response = await api.post('/user/autenticar', {
+            username: 'teste'
         })
+        console.log(response)
     }
 
     render() {
