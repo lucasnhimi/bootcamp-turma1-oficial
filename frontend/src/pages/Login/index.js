@@ -22,7 +22,13 @@ export default class Login extends React.Component {
         let response = await api.post('/user/autenticar', {
             username: 'teste'
         })
-        console.log(response)
+        console.log(response.data)
+        if (response.data) {
+            localStorage.setItem('user', response.data);
+
+            this.props.history.push('/dashboard');
+        }
+        
     }
 
     render() {
